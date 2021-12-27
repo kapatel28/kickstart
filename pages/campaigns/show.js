@@ -9,8 +9,10 @@ import {Link} from '../../routes';
 
 class CampaignShow extends Component {
   static async getInitialProps(props) {
-    const campaign = Campaign(props.query.address); // address of campaings
+    const campaign = Campaign(props.query.address)
     //console.log(props.query.address); // address of campaings
+    //const {address} = props.query;
+    //const campaign = Campaign(address);
     const summary = await campaign.methods.getSummary().call();
     //console.log(summary);
     return{
